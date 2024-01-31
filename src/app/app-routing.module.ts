@@ -14,6 +14,14 @@ const routes: Routes = [
   {
     path: 'pokedex',
     loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule)
+  },
+  {
+    path: 'pokemon/:id',
+    loadChildren: () => import('./pages/pokemon/pokemon.module').then( m => m.PokemonPageModule)
+  },
+  {
+    path: 'pokebola',
+    loadChildren: () => import('./pages/pokebola/pokebola.module').then( m => m.PokebolaPageModule)
   }
 ];
 

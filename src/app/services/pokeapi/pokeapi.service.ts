@@ -17,4 +17,18 @@ export class PokeapiService {
       })
     });
   }
+
+  getPokemon(id: string) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`).subscribe(
+        (data: any) => {
+          resolve(data);
+        },
+        (err: any) => {
+          reject(err);
+        }
+      );
+    });
+  }
+  
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokeapiService } from 'src/app/services/pokeapi/pokeapi.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class PokedexPage implements OnInit {
 
   pokemons: any = [];
 
-  constructor(private pokeapiService: PokeapiService) { 
+  constructor(private pokeapiService: PokeapiService,
+  private router: Router) { 
     
   }
 
@@ -24,7 +26,10 @@ export class PokedexPage implements OnInit {
 
   ngOnInit() {
     this.getPokedex();
+  }
 
+  verMais(pokemonId: string) {
+    this.router.navigate([`pokemon/${pokemonId}`]);    
   }
 
 }
